@@ -3,6 +3,14 @@
 
 /*
    From scipy code at https://github.com/scipy/scipy/blob/master/scipy/special/cephes/i0.h
+
+   Copyright (c) 2001, 2002 Enthought, Inc.
+   All rights reserved.
+  
+   Copyright (c) 2003-2017 SciPy Developers.
+   All rights reserved.
+   
+
 */
 
 /*                                                     i0.c

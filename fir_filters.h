@@ -1,6 +1,15 @@
 #ifndef _fir_filters_h_
 #define _fir_filters_h_
 
+/*
+
+   Copyright (c) 2001, 2002 Enthought, Inc.
+   All rights reserved.
+  
+   Copyright (c) 2003-2017 SciPy Developers.
+   All rights reserved.
+   
+ */
 
 /**
  *     firwin_Kaiser_bandpass

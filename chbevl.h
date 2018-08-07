@@ -3,6 +3,12 @@
 
 /*                                                     chbevl.c
 
+   Copyright (c) 2001, 2002 Enthought, Inc.
+   All rights reserved.
+  
+   Copyright (c) 2003-2017 SciPy Developers.
+   All rights reserved.
+   
        Evaluate Chebyshev series
 
 
