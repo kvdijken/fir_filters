@@ -23,4 +23,6 @@ What still needs to be done:
 - include other filters
 - include other windows
 
+This code has been tested on a Teensy 3.6, compiled from within an Arduino environment.
+
 Disclaimer: I am neither an expert on digital signal processing, nor a Python programmer.
