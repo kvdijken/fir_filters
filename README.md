@@ -25,6 +25,8 @@ What still needs to be done:
 
 This is a piece of example code to use the function.
 
+```
+/*
    Converts an array of floats into an array of shorts for use
    in a FIR filter in the Teensy Audio Library.
 */
@@ -37,8 +39,6 @@ bool arrayFloat2Short( float *floats, short *shorts, int n ) {
 
 /*
    createFilterCoefficients
-
-
 */
 short *createFilterCoefficients( long cutoffLow, long cutoffHigh, int num, long samplingFrequency )
 {
@@ -79,8 +79,7 @@ short *createFilterCoefficients( long cutoffLow, long cutoffHigh, int num, long 
   else
     return NULL;
 }
-
-
+```
 
 This code has been tested on a Teensy 3.6, compiled from within an Arduino environment.
 
