@@ -23,6 +23,63 @@ What still needs to be done:
 - include other filters
 - include other windows
 
+This is a piece of example code to use the function.
+
+/*
+   Converts an array of floats into an array of shorts for use
+   in a FIR filter in the Teensy Audio Library.
+*/
+bool arrayFloat2Short( float *floats, short *shorts, int n ) {
+  for ( int i = 0; i < n; i++ )
+    shorts[i] = (short) (32768 * floats[i]);
+  return true;
+}
+
+
+/*
+   createFilterCoefficients
+*/
+short *createFilterCoefficients( long cutoffLow, long cutoffHigh, int num, long samplingFrequency )
+{
+  bool result = true;
+  float beta = 5.0;
+  short *coeffs = NULL;
+  float *floats = NULL;
+  bool scale = true;
+
+  if ( result ) {
+    floats = (float *) malloc( sizeof( float ) * num );
+    if (floats == NULL) {
+      Serial.println( "Could not create floats array." );
+      result = false;
+    }
+  }
+
+  if ( result )
+    result = firwin_Kaiser_bandpass( floats, num, cutoffLow, cutoffHigh, beta, scale, samplingFrequency );
+
+  if ( result ) {
+    coeffs = (short *) malloc( sizeof( short ) * num );
+    if (coeffs == NULL) {
+      Serial.println( "Could not create coeffs array." );
+      result = false;
+    }
+  }
+
+  if ( result )
+    // convert the floats to the shorts
+    result = result && arrayFloat2Short( floats, coeffs, num );
+
+  if ( floats != NULL )
+    free( floats );
+
+  if ( result )
+    return coeffs;
+  else
+    return NULL;
+}
+
+
 This code has been tested on a Teensy 3.6, compiled from within an Arduino environment.
 
 Disclaimer: I am neither an expert on digital signal processing, nor a Python programmer.
